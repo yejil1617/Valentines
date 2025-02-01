@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Out With Me?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .gradient-background {
+        background: rgb(255, 208, 229);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 208, 229, 1) 0%,
+          rgb(255, 240, 232) 36%,
+          rgb(255, 255, 255) 100%
+        );
+      }
+      .sour-gummy-text {
+        font-family: "Sour Gummy", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 600;
+        font-variation-settings: "wdth" 100;
+      }
+      #no-button {
+        position: absolute;
+        transition: 2s;
+      }
+    </style>
+  </head>
+  <body class="gradient-background">
+    <div class="flex items-center justify-center h-screen">
+      <div class="flex flex-col items-center p-4">
+        <div class="flex flex-row items-center p-4">
+          <img
+            src="image/Happy I Love You GIF by Boomerang Official.gif"
+            alt="Go Out With Me Logo"
+            style="object-fit: cover"
+            id="image1"
+            class="mr-8"
+          />
+          <img
+            style="display: none"
+            src="image/Happy I Love You GIF by Boomerang Official.gif"
+            alt="Go Out With Me Logo"
+            style="object-fit: cover"
+            id="image2"
+          />
+        </div>
+        <div class="flex flex-row items-center p-4">
+          <h1
+            class="sour-gummy-text text-4xl mb-4 text-[#67A3D9]"
+            id="question"
+          >
+            Will you be my valentine?
+          </h1>
+        </div>
+        <div class="buttons items-center p-4">
+          <button
+            id="yes-button"
+            class="bg-[#ffa6a6] hover:bg-[#67A3D9] text-white font-bold py-2 px-4 rounded mr-8"
+          >
+            Yes
+          </button>
+          <button
+            id="no-button"
+            class="bg-[#ffa6a6] hover:bg-[#67A3D9] text-white font-bold py-2 px-4 rounded"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const no_button = document.getElementById("no-button");
+      const yes_button = document.getElementById("yes-button");
+
+      no_button.addEventListener("mouseover", function () {
+        no_button.style.left = `${Math.ceil(Math.random() * 90)}%`;
+        no_button.style.top = `${Math.ceil(Math.random() * 90)}%`;
+      });
+
+      no_button.addEventListener("click", function () {
+        const img1 = document.getElementById("image1");
+        const question = document.getElementById("question");
+
+        img1.src = "image/Valentines Day GIF.gif";
+        question.textContent =
+          "Are you sureeeeeeeee??????? Be my valentine already!!";
+      });
+
+      yes_button.addEventListener("click", function () {
+        const img1 = document.getElementById("image1");
+        const question = document.getElementById("question");
+
+        img1.src = "image/i love you GIF by Bravest Warriors.gif";
+        question.textContent =
+          "Yayyyyyy!!!!!!!!! I Looooooooooove Youuuuuuuuuuuuuuu";
+      });
+    </script>
+  </body>
+</html>
